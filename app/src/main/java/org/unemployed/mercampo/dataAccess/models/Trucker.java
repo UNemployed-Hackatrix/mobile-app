@@ -4,17 +4,17 @@ import com.google.firebase.firestore.GeoPoint;
 
 import java.util.Date;
 
-public class Trucker {
+public class Trucker extends User{
 
     private GeoPoint currentLocation;
     private int id;
-    private String name, truckId, truckType, soat;
+    private String  truckId, truckType, soat;
     private int licenseId;
     private Date licenseValidity;
 
     public Trucker(int id, String name, String truckId, String truckType, String soat, Date licenseValidity, int licenseId) {
+        super(name, 5.0f);
         this.id = id;
-        this.name = name;
         this.truckId = truckId;
         this.truckType = truckType;
         this.soat = soat;
@@ -28,14 +28,6 @@ public class Trucker {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getTruckId() {
